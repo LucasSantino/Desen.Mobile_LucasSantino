@@ -1,8 +1,9 @@
 // importando a biblioteca do Dart
 import 'dart:async';
 import 'dart:io';
-// Função principal do código
-void main(){
+
+//// Função principal do código//////
+void main(){ // Função principal do código
   // declarando a variavel do tipo inteira
   // chamada idade
   int idade = 29;
@@ -16,6 +17,14 @@ void main(){
   String nome = "Daniel";
   print("Nome $nome");
   print("Ola $nome! Seja bem vindo ! ");
+
+  // Declarando variavel do tipo booleana
+  bool st= true;
+  print("Estado da variavel st: $st");
+
+
+
+
 
 }
 
