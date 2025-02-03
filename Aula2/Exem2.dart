@@ -7,6 +7,10 @@ print("Digite seu nome"); // Exibe a mensagem solicitando que o usario digite o 
 // null safety
 // só ira converter o dado se a entrada não for vazia
 String nome =stdin.readLineSync()!;
+print("Digite sua idade");
+String idade =stdin.readLineSync()!;
+
+print("Nome: $nome idade: $idade");
 
 
 }
