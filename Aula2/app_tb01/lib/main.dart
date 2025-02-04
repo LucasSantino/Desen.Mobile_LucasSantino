@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';  // biblioteca dos widgets do flutter para criar os app
 
-void main() {
+void main() {  // Função Principal
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget { // Classe estaticas
   const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false , // remove o banner do aplicativo
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -28,10 +29,10 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'App aula 02 Mobile'),
     );
   }
 }
@@ -54,7 +55,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> {  // Classe dinamica opostom da estatica, possivel alterar 
   int _counter = 0;
 
   void _incrementCounter() {
@@ -65,6 +66,25 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+    });
+  }
+
+  void _resetCounter(){ //Função set state gerencia o estado do aplicativo gerenciando as variaveis
+  setState(() {
+    _counter =0; //zera a varavel counter
+  });
+
+  }
+
+  void _decrementCounter(){
+    setState(() {
+      // O botão so decrementa o cintador se ele for maior do que zero
+      if(_counter>0){
+        _counter--;
+      }
+      else{
+        _counter =0;
+      }
     });
   }
 
@@ -105,12 +125,24 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // Widget Text tem uma propriedade chamada Style e esse Style tem o style 
             const Text(
-              'You have pushed the button this many times:',
+              'Contador', style: TextStyle(fontSize: 22), 
             ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Row(
+              children: [
+                ElevatedButton(onPressed: _resetCounter, child: Text("Reset")),
+              ],
+              
+            ),
+            Row(
+              children: [
+                ElevatedButton(onPressed: _incrementCounter, child: Icon (Icons.add)),
+              ],
             ),
           ],
         ),
