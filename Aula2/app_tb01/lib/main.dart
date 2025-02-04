@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';  // biblioteca dos widgets do flutter para criar os app
 
 void main() {
   runApp(const MyApp());
