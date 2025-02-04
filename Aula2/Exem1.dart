@@ -1,5 +1,4 @@
 // importando a biblioteca do Dart
-import 'dart:async';
 import 'dart:io';
 
 //// Função principal do código//////
