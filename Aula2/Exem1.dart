@@ -1,5 +1,5 @@
 // importando a biblioteca do Dart
-import 'dart:io';
+//import 'dart:io';
 // funçao principal do codigo
 void main(){
   // declarando a variavel do tipo inteira
