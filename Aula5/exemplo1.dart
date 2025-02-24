@@ -4,6 +4,7 @@ Exemplo 1 - Programação oreintada a objeto 24.02.2025
 
 // Cria a classe chamada casa
 class Casa {
+  //String cor= "Branco"; // Inicializa a variavel com o valor padrão
   String? cor; //faz parte do null safety do dart
   int? qtde_p;
 
