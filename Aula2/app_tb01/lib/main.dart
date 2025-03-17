@@ -1,17 +1,18 @@
-import 'package:flutter/material.dart';  // biblioteca dos widgets do flutter para criar os app
+import 'package:flutter/material.dart';
 
-void main() {  // Função Principal
+void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget { // Classe estaticas
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false , // remove o banner do aplicativo
+      // remove o banner de debug do aplicativo
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget { // Classe estaticas
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
+        
       ),
       home: const MyHomePage(title: 'App aula 02 Mobile'),
     );
@@ -55,7 +57,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {  // Classe dinamica opostom da estatica, possivel alterar 
+class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -69,25 +71,24 @@ class _MyHomePageState extends State<MyHomePage> {  // Classe dinamica opostom d
     });
   }
 
-  void _resetCounter(){ //Função set state gerencia o estado do aplicativo gerenciando as variaveis
+void _resetCounter(){
+  // a funçao set state gerencia o estado do aplicativo gerenciando as variaveis
+ setState(() {
+   _counter=0; // zera a variavel counter
+ });
+
+}
+void _decrementCounter(){
   setState(() {
-    _counter =0; //zera a varavel counter
+    // o botao so decrementa o contador se ele for maior do que zero
+    if(_counter>0){
+      _counter--;
+    }
+    else{
+      _counter =0;
+    }
   });
-
-  }
-
-  void _decrementCounter(){
-    setState(() {
-      // O botão so decrementa o cintador se ele for maior do que zero
-      if(_counter>0){
-        _counter--;
-      }
-      else{
-        _counter =0;
-      }
-    });
-  }
-
+}
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -97,6 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {  // Classe dinamica opostom d
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
@@ -125,33 +127,30 @@ class _MyHomePageState extends State<MyHomePage> {  // Classe dinamica opostom d
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Widget Text tem uma propriedade chamada Style e esse Style tem o style 
+            // Widget Text tem um propriedade chamada Style e esse style tem o Text Style
             const Text(
-              'Contador', style: TextStyle(fontSize: 22), 
+              'Contador',style: TextStyle(fontSize: 22),
             ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 ElevatedButton(onPressed: _resetCounter, child: Text("Reset")),
+              ElevatedButton(onPressed: _incrementCounter, child: Icon(
+              Icons.add)),
+              ElevatedButton(onPressed: _decrementCounter, child: Icon(
+                Icons.reset_tv 
+              ))
               ],
-              
             ),
-            Row(
-              children: [
-                ElevatedButton(onPressed: _incrementCounter, child: Icon (Icons.add)),
-              ],
-            ),
+           
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      
     );
   }
 }
