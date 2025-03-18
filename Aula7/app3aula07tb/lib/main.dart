@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -40,6 +39,7 @@ body: Center(
         ],
       ),
       Text("Desenvolvimento Mobile",style: TextStyle(fontSize: 30),),
+      Text("Senai Roberto Mange ",style: TextStyle(fontSize: 30),),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -52,6 +52,9 @@ body: Center(
         print("Desenvolvimento Mobile");
 
       }, child: Text("Mensagem")),
+      TextButton(onPressed: (){
+      print("SENAI ROBERTO MANGE ");
+      }, child: Text("Mensagem"))
   
     ],
   ),
