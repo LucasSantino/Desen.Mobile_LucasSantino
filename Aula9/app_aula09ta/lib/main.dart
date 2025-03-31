@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   // função runApp que executa a classe com a Tela do aplicativo
@@ -36,10 +37,12 @@ class _CampotextoState extends State<Campotexto> {
   // declara variavel do tipo TextEdittingController
   TextEditingController email = TextEditingController();
   TextEditingController nome = TextEditingController();
+  TextEditingController idade = TextEditingController();
   _limpar(){
     setState(() {
       email.text="";
       nome.text="";
+      idade.text ="";
     });
   }
   @override
@@ -74,6 +77,21 @@ class _CampotextoState extends State<Campotexto> {
           controller: nome,
         ),
       ),
+      
+     TextField(
+      keyboardType: TextInputType.number,
+      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+      decoration: InputDecoration(
+        labelText: "Digite sua idade",
+        // border parametro que permite estilizar o widget textfield
+        border: OutlineInputBorder(
+          borderRadius:// BorderRadius.circular(8)
+          BorderRadius.circular(8),
+        )
+      ),
+      controller: idade,
+    
+     ),
 
       // cria um botao para ao ser pressionado exibir no terminal o que o usuario digita
       
@@ -88,6 +106,7 @@ class _CampotextoState extends State<Campotexto> {
           setState(() {
             email.text; 
             nome.text;
+            idade.text;
 
           });
 
@@ -104,7 +123,7 @@ class _CampotextoState extends State<Campotexto> {
       style: TextStyle(fontSize: 18),),
       ),
       Container(width: 300,height: 50,
-      color: Colors.blue,child: Text("${nome.text}",
+      color: Colors.blue,child: Text("${nome.text} - ${idade.text}",
       textAlign: TextAlign.center,
       
       style: TextStyle(fontSize: 18),),
