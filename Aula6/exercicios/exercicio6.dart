@@ -15,7 +15,7 @@ abstract class Automoveis {
   // Métodos abstratos
   void acelerar(); 
   void frear(); 
-  void colocarCinto(); /
+  void colocarCinto(); 
   void ligarCarro(); 
   void desligarCarro(); 
   void dirigir(); 
