@@ -47,7 +47,7 @@ class _LoginState extends State<Login> {
           Container(
             width: 200,height: 200,
             color: Colors.grey,
-            child: Image.asset(''),
+            child: Image.asset('assets/images/senai.png'),
           ),
           SizedBox(
             width: 250,
