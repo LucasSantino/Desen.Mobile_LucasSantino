@@ -23,6 +23,7 @@ class _LoginState extends State<Login> {
   // cria função para verificar o usuario e fazer o login
 
   _verificalogin(){
+    
     if(user.text=="Senai" && senha.text =="2025"){
       // Chama a segunda tela
 
@@ -47,7 +48,8 @@ class _LoginState extends State<Login> {
           Container(
             width: 200,height: 200,
             color: Colors.grey,
-            child: Image.asset('assets/images/senai.png'),
+            child: Image.asset('assets/images/senai.png',
+            fit: BoxFit.fill,),
           ),
           SizedBox(
             width: 250,
@@ -84,6 +86,7 @@ class _LoginState extends State<Login> {
                   obscureText: true,
                   obscuringCharacter: '*',
                   controller: senha,
+                  onSubmitted:(value) =>_verificalogin(),
                 ),
               ],
             ),
