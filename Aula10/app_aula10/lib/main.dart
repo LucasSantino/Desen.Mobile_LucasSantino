@@ -1,4 +1,6 @@
+import 'package:app_aula10/tela2.dart';
 import 'package:flutter/material.dart';
+
 
 void main() {
   runApp(MaterialApp(
@@ -77,7 +79,10 @@ class DashboardScreen extends StatelessWidget {
 
             SizedBox(height: 10,),
             _DashboardButton(icon: Icons.analytics_outlined, 
-            label: 'Monitoramento', onTap: (){}),
+            label: 'Monitoramento', onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: 
+              (context)=>ColetaDadosScreen()));
+            }),
             SizedBox(height: 10,),
             _DashboardButton(
               icon: Icons.settings_remote_outlined, 
