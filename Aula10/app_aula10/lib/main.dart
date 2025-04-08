@@ -1,3 +1,4 @@
+import 'package:app_aula10/tela3.dart';
 import 'package:app_aula10/tela2.dart';
 import 'package:flutter/material.dart';
 
@@ -87,7 +88,10 @@ class DashboardScreen extends StatelessWidget {
             _DashboardButton(
               icon: Icons.settings_remote_outlined, 
               label: 'Sistema de controle', 
-              onTap: (){}),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context)=>Telaacionamento()));
+              }),
 
               SizedBox(height: 10,),
               _DashboardButton(
