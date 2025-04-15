@@ -1,3 +1,4 @@
+import 'package:appaula11/screen/ChatScreen.dart';
 import 'package:appaula11/screen/tela1.dart';
 import 'package:appaula11/screen/tela2.dart';
 import 'package:appaula11/screen/tela3.dart';
@@ -48,6 +49,7 @@ class _NavScreenState extends State<NavScreen> {
       //Text('Index 1: School',style: optionStyle,),
       //Text('Index 2: Business',style: optionStyle,)
       RadioButtomExample(),
+      ChatScreen()
     ];
 
 
@@ -101,6 +103,11 @@ class _NavScreenState extends State<NavScreen> {
               icon: Icon(Icons.business_outlined),
               label: 'Business',
               backgroundColor: Colors.orange),
+            BottomNavigationBarItem(
+              
+              icon: Icon(Icons.smart_toy_outlined),
+              label: 'Chatbot',
+              backgroundColor: Colors.teal),
               
 
         ],
