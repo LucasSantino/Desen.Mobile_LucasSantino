@@ -138,10 +138,10 @@ void _decrementCounter(){
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                ElevatedButton(onPressed: _resetCounter, child: Text("Reset")),
-              ElevatedButton(onPressed: _incrementCounter, child: Icon(
+                ElevatedButton(onPressed: _resetCounter, child: const Text("Reset")),
+              ElevatedButton(onPressed: _incrementCounter, child: const Icon(
               Icons.add)),
-              ElevatedButton(onPressed: _decrementCounter, child: Icon(
+              ElevatedButton(onPressed: _decrementCounter, child: const Icon(
                 Icons.reset_tv 
               ))
               ],

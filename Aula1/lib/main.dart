@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-          ElevatedButton(onPressed: _resetCounter, child: Text('Reset')),
+          ElevatedButton(onPressed: _resetCounter, child: const Text('Reset')),
           ],
         ),
       ),

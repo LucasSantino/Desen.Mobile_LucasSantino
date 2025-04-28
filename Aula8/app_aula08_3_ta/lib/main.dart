@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
             child: Container(alignment: Alignment.center,
               width: 200,height: 200,color: Colors.red,
             // ${_msg} acessa o conteudo da variavel _msg
-            child:Text("${_msg}",
+            child:Text("$_msg",
             textAlign: TextAlign.center,
             style: 
             TextStyle(
@@ -93,9 +93,9 @@ class _HomeState extends State<Home> {
            SizedBox(
             
             width: double.infinity,
-            child: ElevatedButton(onPressed: _exibemsg, child: Text("Exibir"),
+            child: ElevatedButton(onPressed: _exibemsg,
             style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(Colors.red),
-            foregroundColor: WidgetStateProperty.all(Colors.white)),
+            foregroundColor: WidgetStateProperty.all(Colors.white)), child: Text("Exibir"),
 
             ),
             

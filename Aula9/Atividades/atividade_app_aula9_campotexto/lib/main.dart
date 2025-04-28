@@ -170,7 +170,7 @@ class _CampotextoState extends State<Campotexto> {
             borderRadius: BorderRadius.circular(8), 
           ),
           child: Text(
-            "${email.text}",
+            email.text,
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 18),
           ),

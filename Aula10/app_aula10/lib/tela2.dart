@@ -97,7 +97,7 @@ class SensorCard extends StatelessWidget {
   // cria variavel final SensorData sensor;
   final SensorData sensor;
   // cria o construtor
-   SensorCard({super.key,required this.sensor});
+   const SensorCard({super.key,required this.sensor});
 
   @override
   Widget build(BuildContext context) {
