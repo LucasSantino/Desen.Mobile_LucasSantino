@@ -1,3 +1,4 @@
+import 'package:app_aula14/screens/cadastrousuario.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert'; // pacote utilizado para converter json
@@ -58,6 +59,7 @@ class _LoginState extends State<Login> {
             height: 300,
             width: 300,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -97,6 +99,7 @@ class _LoginState extends State<Login> {
                 ),
                 ElevatedButton(onPressed: _verificaLogin, child: Text("Entrar")),
                 ElevatedButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Cadastrousuario()));
 
                 }, child: Text("Cadastrar"))
               ],
