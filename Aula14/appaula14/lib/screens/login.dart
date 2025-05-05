@@ -27,11 +27,85 @@ class _LoginState extends State<Login> {
     print(resposta.statusCode); // codigo de retorno api
     // cria uma variavel dados
     var dados = json.decode(resposta.body) as List; // armazena o dado na forma de lista
+    print("${dados[0]["login"]}  ${dados[0]["senha"]}");
+    for(int i=0;i<dados.length;i++){
+      print("${dados[i]["login"]}  ${dados[i]["senha"]}");
+      if(user.text==dados[i]["login"]&&senha.text==dados[i]["senha"]){
+        encuser = true;
+        break;
+      }
+    }
+    if(encuser==true){
+      print("Usuario ${user.text} encontrado");
+      encuser=false;
+      // vai para outra tela
+      user.text="";
+      senha.text="";
+    }
+    else{
+      print("Usuario ${user.text} nao encontrado");
+    }
 
   }
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+           SizedBox(
+            height: 300,
+            width: 300,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    keyboardType: TextInputType.name,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8)
+                      ),
+                      icon: Icon(Icons.people_alt_outlined,color: Colors.red,),
+                      hintText: "Digite seu nome"
+                    ),
+                    controller: user,
+                  ),
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.name,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    icon: Icon(Icons.key_outlined,),
+                    iconColor: Colors.red,
+                    suffixIcon: IconButton(icon: Icon(exibir? Icons.visibility_off:Icons.visibility),onPressed: (){
+                      setState(() {
+                        exibir= !exibir;
+                      });
+                    
+                    }), 
+                    hintText: "Digite sua senha",
+                    
+                  ),
+                  obscureText: exibir,
+                  obscuringCharacter: '*',
+                  controller: senha,
+                  
+                ),
+                ElevatedButton(onPressed: _verificaLogin, child: Text("Entrar")),
+                ElevatedButton(onPressed: (){
+
+                }, child: Text("Cadastrar"))
+              ],
+            ),
+           )
+          ],
+        ),
+      ),
+    );
   }
 }
 
