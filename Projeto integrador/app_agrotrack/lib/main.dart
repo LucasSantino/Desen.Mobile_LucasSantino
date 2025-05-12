@@ -53,7 +53,13 @@ class _NavScreenState extends State<NavScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("AgroTrack - Gestão Inteligente"),
+        title: const Text(
+          "AgroTrack - Gestão Inteligente",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: false,
         backgroundColor: primaryColor,
       ),

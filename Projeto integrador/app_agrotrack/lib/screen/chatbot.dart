@@ -92,11 +92,9 @@ class _ChatbotState extends State<Chatbot> {
                           BorderRadius.circular(30), // Bordas arredondadas
                       boxShadow: [
                         BoxShadow(
-                          color:
-                              Colors.black.withOpacity(0.1), // Cor mais suave
-                          spreadRadius: 2, // Aumentei o spread
-                          blurRadius:
-                              8, // Aumentei o blur para um efeito mais suave
+                          color: Colors.black.withOpacity(0.1),
+                          spreadRadius: 2,
+                          blurRadius: 8,
                           offset: Offset(0,
                               4), // Sombra mais abaixo para dar um toque de profundidade
                         ),
