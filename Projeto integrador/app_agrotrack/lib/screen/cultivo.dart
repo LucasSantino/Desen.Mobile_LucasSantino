@@ -79,16 +79,8 @@ class Cultivo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Plantações em Ada',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                ),
-                Icon(Icons.add, color: Colors.teal),
-              ],
-            ),
+            Text('Plantações em Andamento',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
             const SizedBox(height: 12),
             for (var cultura in culturasCadastradas)
               Card(
